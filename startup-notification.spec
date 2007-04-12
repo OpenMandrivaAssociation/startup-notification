@@ -1,0 +1,70 @@
+%define api_version 1
+%define lib_major   0
+%define lib_name	%mklibname %{name}- %{api_version} %{lib_major}
+
+Summary: Library used to monitor application startup
+Name: startup-notification
+Version: 0.9
+Release: %mkrel 1
+License: LGPL
+Group: System/Libraries
+URL: http://www.freedesktop.org/
+Source0: http://www.freedesktop.org/software/%name/releases/%{name}-%{version}.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
+BuildRequires: XFree86-devel
+
+%description
+Startup-notification is a library used to monitor application startup.
+
+%package -n %{lib_name}
+Summary:	Library used to monitor application startup
+Group:		%{group}
+Provides:	lib%{name}-%{api_version} = %{version}-%{release}
+
+%description -n %{lib_name}
+Startup-notification is a library used to monitor application startup.
+
+%package -n %{lib_name}-devel
+Summary:	Library used to monitor application startup
+Group:		Development/C
+Provides:	lib%{name}-%{api_version}-devel = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{lib_name} = %{version}-%{release}
+
+%description -n %{lib_name}-devel
+Startup-notification is a library used to monitor application startup.
+
+%prep
+%setup -q
+
+%build
+%configure2_5x
+
+%make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%makeinstall_std
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post -p /sbin/ldconfig -n %{lib_name}
+
+%postun -p /sbin/ldconfig -n %{lib_name}
+
+%files -n %{lib_name}
+%defattr(-,root,root,-)
+%doc ChangeLog 
+%{_libdir}/*.so.*
+
+%files -n %{lib_name}-devel
+%defattr(-,root,root,-)
+%{_libdir}/*.so
+%{_libdir}/*.la
+%{_libdir}/*.a
+%{_libdir}/pkgconfig/*
+%{_includedir}/*
+
+

@@ -1,11 +1,12 @@
 %define api_version 1
 %define lib_major   0
 %define lib_name	%mklibname %{name}- %{api_version} %{lib_major}
+%define develname %mklibname %{name}- %{api_version}  -d
 
 Summary: Library used to monitor application startup
 Name: startup-notification
 Version: 0.9
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPL
 Group: System/Libraries
 URL: http://www.freedesktop.org/
@@ -24,14 +25,15 @@ Provides:	lib%{name}-%{api_version} = %{version}-%{release}
 %description -n %{lib_name}
 Startup-notification is a library used to monitor application startup.
 
-%package -n %{lib_name}-devel
+%package -n %develname
 Summary:	Library used to monitor application startup
 Group:		Development/C
 Provides:	lib%{name}-%{api_version}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{lib_name} = %{version}-%{release}
+Obsoletes:  %mklibname %{name}- 1 0 -d
 
-%description -n %{lib_name}-devel
+%description -n %develname
 Startup-notification is a library used to monitor application startup.
 
 %prep
@@ -59,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog 
 %{_libdir}/*.so.*
 
-%files -n %{lib_name}-devel
+%files -n %develname
 %defattr(-,root,root,-)
 %{_libdir}/*.so
 %{_libdir}/*.la

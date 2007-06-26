@@ -6,13 +6,13 @@
 Summary: Library used to monitor application startup
 Name: startup-notification
 Version: 0.9
-Release: %mkrel 2
+Release: %mkrel 3
 License: LGPL
 Group: System/Libraries
 URL: http://www.freedesktop.org/
 Source0: http://www.freedesktop.org/software/%name/releases/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires: XFree86-devel
+BuildRequires: X11-devel
 
 %description
 Startup-notification is a library used to monitor application startup.

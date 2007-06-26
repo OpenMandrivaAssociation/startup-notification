@@ -31,7 +31,8 @@ Group:		Development/C
 Provides:	lib%{name}-%{api_version}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{lib_name} = %{version}-%{release}
-Obsoletes:  %mklibname %{name}- 1 0 -d
+# (tv) only ever released major was 0:
+Obsoletes:  %mklibname %{name}- 1 -d
 
 %description -n %develname
 Startup-notification is a library used to monitor application startup.

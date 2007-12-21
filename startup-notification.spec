@@ -11,6 +11,7 @@ License: LGPL
 Group: System/Libraries
 URL: http://www.freedesktop.org/
 Source0: http://www.freedesktop.org/software/%name/releases/%{name}-%{version}.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: X11-devel
 
 %description

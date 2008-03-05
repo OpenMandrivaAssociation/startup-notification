@@ -6,7 +6,7 @@
 Summary: Library used to monitor application startup
 Name: startup-notification
 Version: 0.9
-Release: %mkrel 5
+Release: %mkrel 6
 License: LGPL
 Group: System/Libraries
 URL: http://www.freedesktop.org/

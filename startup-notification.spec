@@ -6,7 +6,7 @@
 Summary:	Library used to monitor application startup
 Name:		startup-notification
 Version:	0.12
-Release:	3
+Release:	4
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/

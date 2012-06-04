@@ -1,39 +1,38 @@
-%define api_version 1
-%define lib_major   0
-%define lib_name	%mklibname %{name}- %{api_version} %{lib_major}
-%define develname	%mklibname %{name}- %{api_version}  -d
+%define api	1
+%define major   0
+%define libname	%mklibname %{name}- %{api} %{major}
+%define devname	%mklibname %{name}- %{api}  -d
 
-Summary: Library used to monitor application startup
-Name: startup-notification
-Version: 0.12
-Release: 3
-License: LGPLv2+
-Group: System/Libraries
-URL: http://www.freedesktop.org/
-Source0: http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.bz2
-BuildRequires: pkgconfig(xcb-util)
-BuildRequires: pkgconfig(x11-xcb)
+Summary:	Library used to monitor application startup
+Name:		startup-notification
+Version:	0.12
+Release:	3
+License:	LGPLv2+
+Group:		System/Libraries
+URL:		http://www.freedesktop.org/
+Source0:	http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.bz2
+BuildRequires:	pkgconfig(xcb-util)
+BuildRequires:	pkgconfig(x11-xcb)
 
 %description
 Startup-notification is a library used to monitor application startup.
 
-%package -n %{lib_name}
+%package -n %{libname}
 Summary:	Library used to monitor application startup
 Group:		%{group}
-Provides:	lib%{name}-%{api_version} = %{version}-%{release}
+Provides:	lib%{name}-%{api} = %{version}-%{release}
 
-%description -n %{lib_name}
+%description -n %{libname}
 Startup-notification is a library used to monitor application startup.
 
-%package -n %{develname}
+%package -n %{devname}
 Summary:	Library used to monitor application startup
 Group:		Development/C
-Provides:	lib%{name}-%{api_version}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
-Requires:	%{lib_name} = %{version}-%{release}
-Obsoletes:  %mklibname %{name}- 1 0 -d
+Requires:	%{libname} = %{version}-%{release}
+Obsoletes:	%mklibname %{name}- 1 0 -d
 
-%description -n %{develname}
+%description -n %{devname}
 Startup-notification is a library used to monitor application startup.
 
 %prep
@@ -46,14 +45,13 @@ Startup-notification is a library used to monitor application startup.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 find %{buildroot} -name '*.la' -delete
 
-%files -n %{lib_name}
-%{_libdir}/*-%{api_version}.so.%{lib_major}*
+%files -n %{libname}
+%{_libdir}/*-%{api}.so.%{major}*
 
-%files -n %{develname}
+%files -n %{devname}
 %doc ChangeLog 
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*

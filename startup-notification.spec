@@ -6,7 +6,7 @@
 Summary:	Library used to monitor application startup
 Name:		startup-notification
 Version:	0.12
-Release:	17
+Release:	18
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/
@@ -78,7 +78,7 @@ Startup-notification is a library used to monitor application startup.
 + Revision: 704138
 + rebuild (emptylog)
 
-* Sat May 21 2011 Götz Waschk <waschk@mandriva.org> 0.12-1
+* Sat May 21 2011 GÃ¶tz Waschk <waschk@mandriva.org> 0.12-1
 + Revision: 676597
 - update to new version 0.12
 
@@ -102,7 +102,7 @@ Startup-notification is a library used to monitor application startup.
 + Revision: 524135
 - rebuilt for 2010.1
 
-* Mon May 04 2009 Götz Waschk <waschk@mandriva.org> 0.10-1mdv2010.0
+* Mon May 04 2009 GÃ¶tz Waschk <waschk@mandriva.org> 0.10-1mdv2010.0
 + Revision: 371622
 - update build deps
 - update license
@@ -142,7 +142,7 @@ Startup-notification is a library used to monitor application startup.
 - new devel library policy
 
 
-* Sat Apr 07 2007 Götz Waschk <waschk@mandriva.org> 0.9-1mdv2007.1
+* Sat Apr 07 2007 GÃ¶tz Waschk <waschk@mandriva.org> 0.9-1mdv2007.1
 + Revision: 150956
 - new version
 - Import startup-notification
@@ -153,11 +153,11 @@ Startup-notification is a library used to monitor application startup.
 * Sun Jan 01 2006 Mandriva Linux Team <http://www.mandrivaexpert.com/> 0.8-2mdk
 - Rebuild
 
-* Thu Dec 02 2004 G�tz Waschk <waschk@linux-mandrake.com> 0.8-1mdk
+* Thu Dec 02 2004 Götz Waschk <waschk@linux-mandrake.com> 0.8-1mdk
 - new source URL
 - New release 0.8
 
-* Fri Jun 25 2004 G�tz Waschk <waschk@linux-mandrake.com> 0.7-1mdk
+* Fri Jun 25 2004 Götz Waschk <waschk@linux-mandrake.com> 0.7-1mdk
 - fix source url
 - reenable libtoolize
 - New release 0.7

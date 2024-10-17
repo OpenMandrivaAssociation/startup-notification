@@ -9,7 +9,7 @@ Version:	0.12
 Release:	21
 License:	LGPLv2+
 Group:		System/Libraries
-URL:		http://www.freedesktop.org/
+URL:		https://www.freedesktop.org/
 Source0:	http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(xcb-util)
 BuildRequires:	pkgconfig(x11-xcb)
